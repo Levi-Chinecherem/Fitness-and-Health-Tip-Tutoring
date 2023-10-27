@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mt-3">
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{% if profile.profile_image %}{{ profile.profile_image.url }}{% else %}{% static 'images/default-profile-image.jpg' %}{% endif %}" class="card-img-top" alt="Profile Image">
+            <div class="card-body">
+                <h5 class="card-title">{{ profile.full_name }}</h5>
+                <p class="card-text">{{ profile.sex }}<br>{{ profile.address }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
