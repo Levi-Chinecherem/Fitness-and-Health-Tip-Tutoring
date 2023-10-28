@@ -33,7 +33,7 @@ The project consists of two Django apps: "fitness_app" and "accounts." Here's a 
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/Levi-Chinecherem/Fitness-and-Health-Tip-Tutoring>
    cd fitness-health-tip-management-system
    ```
 2. Install the required Python packages:
@@ -69,11 +69,11 @@ The project consists of two Django apps: "fitness_app" and "accounts." Here's a 
 
 Here are some sample screenshots of the application:
 
-![Screenshot 1](sample-screenshots/screenshot1.png)
+![Screenshot 1](https://github.com/Levi-Chinecherem/Fitness-and-Health-Tip-Tutoring/blob/main/sample%20outputs/p1.png)
 
-![Screenshot 2](sample-screenshots/screenshot2.png)
+![Screenshot 2](https://github.com/Levi-Chinecherem/Fitness-and-Health-Tip-Tutoring/blob/main/sample%20outputs/p4.png)
 
-![Screenshot 3](sample-screenshots/screenshot3.png)
+![Screenshot 3](https://github.com/Levi-Chinecherem/Fitness-and-Health-Tip-Tutoring/blob/main/sample%20outputs/p3.png)
 
 ## Contributing
 
