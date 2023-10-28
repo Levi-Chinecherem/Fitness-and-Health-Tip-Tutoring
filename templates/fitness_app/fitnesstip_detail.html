@@ -2,8 +2,6 @@
 
 {% block content %}
 <div class="row mt-3">
-    <div class="col-md-4">
-        <div class="card">
             <img src="{{ tip.cover_image.url }}" class="card-img-top" alt="Cover Image">
             <div class="card-body">
                 <h5 class="card-title">{{ tip.title }}</h5>
@@ -15,7 +13,5 @@
                     <a href="{% url 'fitnesstip_delete' tip.pk %}" class="btn btn-danger">Delete</a>
                 {% endif %}
             </div>
-        </div>
-    </div>
 </div>
 {% endblock %}

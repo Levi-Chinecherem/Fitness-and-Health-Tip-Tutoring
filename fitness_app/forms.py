@@ -16,14 +16,6 @@ class UserProfileForm(forms.ModelForm):
             'profile_image': forms.FileInput(attrs={'class': 'form-control-file'}),
         }
 
-    def save(self, commit=True):
-        instance = super(UserProfileForm, self).save(commit=False)
-        instance.user = self.user
-        if commit:
-            instance.save()
-        return instance
-
-
 class FitnessTipForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorUploadingWidget())
     

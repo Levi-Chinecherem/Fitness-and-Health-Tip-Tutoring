@@ -5,6 +5,9 @@ from .forms import UserProfileForm, FitnessTipForm
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
+def home(request):
+    return render(request, 'home.html')
+
 # users profile views category
 @login_required
 def userprofile_detail(request):
@@ -13,20 +16,16 @@ def userprofile_detail(request):
 
 @login_required
 def userprofile_create(request):
-    try:
-        profile = UserProfile.objects.get(user=request.user)
-        return redirect('userprofile_update', pk=profile.pk)
-    except UserProfile.DoesNotExist:
-        if request.method == 'POST':
-            form = UserProfileForm(request.POST, request.FILES)
-            if form.is_valid():
-                profile = form.save(commit=False)
-                profile.user = request.user  # Set the user to the currently logged-in user
-                profile.save()
-                return redirect('userprofile_detail')
-        else:
-            form = UserProfileForm()
-        return render(request, 'profiles/userprofile_form.html', {'form': form})
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user  # Set the user to the currently logged-in user
+            profile.save()
+            return redirect('userprofile_detail', pk=profile.pk)  # Redirect to the user's profile detail page
+    else:
+        form = UserProfileForm()
+    return render(request, 'profiles/userprofile_form.html', {'form': form})
 
 @login_required
 def userprofile_update(request, pk):
